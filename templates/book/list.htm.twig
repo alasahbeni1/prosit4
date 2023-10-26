@@ -1,0 +1,23 @@
+<h1>List of Books</h1>
+{% set x = 0 %}
+{% if  tabBooks is empty%}
+<h1>Tab vide</h1>
+{% else %}
+{% for}
+<table border="1">
+    <tr>
+        <th>ref</th>
+        <th>title</th>
+        <th>Published</th>
+        <th>publication</th>
+        
+    </tr>
+    {% for i in tabAuthors %}
+        <tr>
+            <td>{{ i.ref }}</td>
+            <td> {{ i.title|upper }}</td>
+            <td>{{ i.Published }}</td>
+            
+            <td> <a href="{{ path('app_Book') }}">Show more +</a></td>
+            {% set  x= x+i.published   %}
+        </tr>
